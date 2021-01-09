@@ -1,9 +1,11 @@
 package com.lxyqaq.boot.config;
 
+import com.lxyqaq.boot.bean.Car;
 import com.lxyqaq.boot.bean.Pet;
 import com.lxyqaq.boot.bean.User;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -32,6 +34,9 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration(proxyBeanMethods = true) //告诉SpringBoot这是一个配置类 == 配置文件
 @ConditionalOnMissingBean(name = "tom") //条件装配
+//1.开启Car的配置绑定
+//2.把这个Car这个组件自动注册到容器中
+@EnableConfigurationProperties(Car.class)
 public class MyConfig {
 
     @Bean
