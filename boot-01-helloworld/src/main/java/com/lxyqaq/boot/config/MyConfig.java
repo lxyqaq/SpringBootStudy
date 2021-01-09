@@ -2,6 +2,8 @@ package com.lxyqaq.boot.config;
 
 import com.lxyqaq.boot.bean.Pet;
 import com.lxyqaq.boot.bean.User;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -28,18 +30,19 @@ import org.springframework.context.annotation.Configuration;
  * 5、@ImportResource("classpath:beans.xml")导入Spring的配置文件，
  *
  */
-@Configuration(proxyBeanMethods = false) //告诉SpringBoot这是一个配置类 == 配置文件
+@Configuration(proxyBeanMethods = true) //告诉SpringBoot这是一个配置类 == 配置文件
+@ConditionalOnMissingBean(name = "tom") //条件装配
 public class MyConfig {
 
     @Bean
     public User user01() {
         User user01 = new User("张三", 18);
         //User组件依赖了Pet组件
-        //user01.setPet(pet01());
+        user01.setPet(pet01());
         return user01;
     }
 
-    @Bean("tom")
+    @Bean("tom22")
     public Pet pet01() {
         return new Pet("tomcat");
     }
