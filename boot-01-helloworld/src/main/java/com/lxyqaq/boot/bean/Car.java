@@ -1,5 +1,7 @@
 package com.lxyqaq.boot.bean;
 
+import lombok.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -11,35 +13,17 @@ import org.springframework.stereotype.Component;
  * @Version 1.0
  */
 
+@Data //get set方法
+@NoArgsConstructor //无参数构造器
+@AllArgsConstructor //全参数构造器
+@ToString //重写toString方法
+@EqualsAndHashCode //重写hashcode方法
+@Slf4j //引入日志 log.info
 @Component
 @ConfigurationProperties(prefix = "mycar")
 public class Car {
 
     private String brand;
     private Integer price;
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "brand='" + brand + '\'' +
-                ", price=" + price +
-                '}';
-    }
 
 }
