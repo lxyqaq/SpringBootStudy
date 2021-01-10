@@ -1,0 +1,30 @@
+person:
+  userName: nuonuo
+  boss: true
+  birth: 1998/01/28
+  age: 22
+  #interests: [ 篮球,足球 ]
+  interests:
+    - 篮球
+    - 足球
+  animal: [ 小黑,小白 ]
+  #  score:
+  #    English: 10
+  #    Chinese: 20
+  score: { English: 80, Chinese: 90 }
+  salarys:
+    - 9999.22
+    - 3882.11
+  pet:
+    name: 小菊
+    weight: 38
+  allPets:
+    sick:
+      - { name: 阿狗,weight: 99.99 }
+      - name: 阿猫
+        weight: 88.88
+      - name: 阿虫
+        weight: 77.77
+    health:
+      - { name: 阿花,weight: 199.99 }
+      - { name: 阿明,weight: 199.99 }
