@@ -1,5 +1,4 @@
 person:
-  userName: nuonuo
   boss: true
   birth: 1998/01/28
   age: 22
@@ -28,3 +27,4 @@ person:
     health:
       - { name: 阿花,weight: 199.99 }
       - { name: 阿明,weight: 199.99 }
+  user-name: nuonuo

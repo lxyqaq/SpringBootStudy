@@ -11,7 +11,7 @@
     <groupId>com.lxyqaq.boot</groupId>
     <artifactId>boot-02-helloworld</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>boot-02-helloworld</name>
+    <name>boot-02-helloWorld</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -49,6 +49,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <build>
@@ -59,8 +64,8 @@
                 <configuration>
                     <excludes>
                         <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-configuration-processor</artifactId>
                         </exclude>
                     </excludes>
                 </configuration>
